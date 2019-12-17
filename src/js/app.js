@@ -4,8 +4,6 @@ import fire from './config/Firebase'
 import './../sass/style.scss'; // adres do głównego pliku SASS
 import LoginAndRegister from "./components/LoginAndRegister";
 import Dashboard from "./components/Dashboard";
-import NavDashboard from "./components/NavDashboard";
-import ContentDashboard from "./components/ContentDashboard";
 import {
     HashRouter,
     Route,

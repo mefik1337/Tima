@@ -1,8 +1,12 @@
+.container {
+  max-width: 100%;
+}
 .loginandregister {
   height: 100vh;
   color: #F9FAFB;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .login {

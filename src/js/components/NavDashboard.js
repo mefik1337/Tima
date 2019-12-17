@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import fire from '../config/Firebase'
 import { NavLink } from 'react-router-dom';
-import ContentDashboard from "./ContentDashboard";
+import ContentDashboard from "./content/ContentDashboard";
 export default class NavDashboard extends Component {
 
     handleLogOut = () => {
