@@ -1,0 +1,133 @@
+.loginandregister {
+  height: 100vh;
+  color: #F9FAFB;
+  display: flex;
+  align-items: center;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .login-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 25%;
+    background: #282F4F;
+    border-radius: 10px;
+    box-shadow: 1px 2px 2px #222844;
+  }
+}
+
+#login-btns {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  border-radius: 10px 10px 3px 3px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  padding: 20px 0;
+  width: 100%;
+  background: #F9FAFB;
+  color: #2E365D;
+}
+
+.login-body {
+  width: 100%;
+  .login-title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    font-size: 1.2rem;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    [name="email"],
+    [name="password"] {
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 2px;
+      width: 70%;
+      border: none;
+      background: lighten(#282F4F, 5%);
+      color: #F9FAFB;
+      outline: none;
+      transition: 0.2s;
+      &::placeholder {
+        color: #F9FAFB;
+      }
+      &:focus {
+        padding: 13px;
+        transition: 0.2s;
+      }
+    }
+  }
+}
+.errorLogin {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  color: #DC143C;
+  margin-bottom: 15px;
+}
+
+.triggerBtns{
+  cursor: pointer;
+  padding-bottom: 10px;
+  transition: 0.3s ease-in-out;
+  border-color: transparent;
+}
+
+.login-active{
+  border-bottom: 2px solid #33FF57;
+  border-radius: 2px;
+  transition: 0.3s ease-in-out;
+  padding-bottom: 10px;
+
+}
+.triggerBtns:hover {
+  border-bottom: 2px solid lighten(#282F4F, 5%);
+  border-radius: 2px;
+  transition: 0.3s ease-in-out;
+  padding-bottom: 10px;
+}
+
+.register-active{
+  border-bottom: 2px solid #DC143C;
+  border-radius: 2px;
+  transition: 0.3s ease-in-out;
+  padding-bottom: 10px;
+}
+
+.loginBtn,
+.registerBtn {
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  width: 75%;
+  padding: 10px;
+  margin: 25px 0;
+  background: lighten(#282F4F, 5%);
+  color: #F9FAFB;
+  font-size: 0.75rem;
+}
+
+.registerBtn:active,
+.loginBtn:active{
+  background: lighten(#282F4F, 8%);
+  padding: 12px;
+  transition: 0.1s;
+}
+.registerBtn:focus,
+.loginBtn:focus{
+  outline: none;
+}

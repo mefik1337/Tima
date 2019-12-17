@@ -1,0 +1,80 @@
+nav {
+  height: 100vh;
+  background: #282F4F;
+  box-shadow: 3px 1px 3px #222844;
+  width: 15%;
+}
+.nav-title {
+  color: lighten(#282F4F, 60%);
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  span {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: lighten(#282F4F, 30%);
+  }
+}
+.nav-welcome {
+  color: #F9FAFB;
+  margin-top: 20px;
+  font-family: "Roboto Light", sans-serif;
+  text-align: center;
+  span {
+    color: #33FF57;
+  }
+}
+.navbar-row {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 -15px;
+}
+.nav-title{
+  margin: 100px 0 20px 0;
+}
+.nav-links {
+  color: lighten(#282F4F, 30%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+  padding-bottom: 100px;
+  a {
+    font-family: "Open Sans",sans-serif;
+    margin-bottom: 30px;
+    i {
+      padding-right: 15px;
+    }
+  }
+}
+
+.logoutBtn {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  padding: 10px 35px;
+  border-radius: 2px;
+  background: lighten(#282F4F, 12%);
+  color: #DC143C;
+  font-size: 14px;
+  outline: none;
+  font-family: "Open Sans", sans-serif;
+  transition: 0.2s ease-in-out;
+  i {
+    padding-left: 10px;
+  }
+}
+.logoutBtn:hover {
+  background: lighten(#282F4F, 12%);
+  transition: 0.2s ease-in-out;
+  padding: 12px 37px;
+}

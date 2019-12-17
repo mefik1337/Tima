@@ -6,7 +6,7 @@ import LoginAndRegister from "./components/LoginAndRegister";
 import Dashboard from "./components/Dashboard";
 class App extends React.Component {
     state = {
-        user: null
+        user: null,
     };
 
     componentDidMount() {
