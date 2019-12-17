@@ -18,7 +18,7 @@ nav {
 }
 .nav-welcome {
   color: #F9FAFB;
-  margin-top: 20px;
+  margin-top: 40px;
   font-family: "Roboto Light", sans-serif;
   text-align: center;
   span {
@@ -37,23 +37,33 @@ nav {
 .nav-title{
   margin: 100px 0 20px 0;
 }
+
 .nav-links {
-  color: lighten(#282F4F, 30%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 70px;
   padding-bottom: 100px;
+  .nav-chosen {
+    font-weight: 700;
+    color: lighten(#282F4F, 90%);
+  }
   a {
+    color: lighten(#282F4F, 30%);
     font-family: "Open Sans",sans-serif;
     margin-bottom: 30px;
+    text-decoration: none;
+    transition: 0.2s;
+    &:hover {
+      color: lighten(#282F4F, 90%);
+      font-size: 17px;
+    }
     i {
       padding-right: 15px;
     }
   }
 }
-
 .logoutBtn {
   display: flex;
   flex-direction: row-reverse;

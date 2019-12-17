@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 
-export default class ContentDashboard extends Component{
+export default class CalendarDashboard extends Component{
     render() {
         return(
             <div className="content-dashboard">
                 <div className="container">
                     <div className="content-dashboard-row">
-                        <span className="content-dashboard">content</span>
+                        <span className="content-dashboard">calendar</span>
                     </div>
                 </div>
             </div>

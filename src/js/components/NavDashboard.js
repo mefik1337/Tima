@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import fire from '../config/Firebase'
-
+import { NavLink } from 'react-router-dom';
+import ContentDashboard from "./ContentDashboard";
 export default class NavDashboard extends Component {
 
     handleLogOut = () => {
@@ -15,9 +16,9 @@ export default class NavDashboard extends Component {
                         <span className="nav-title">Tima <span>Dashboard</span></span>
                         <span className="nav-welcome">Welcome, <span>{this.props.name.email}</span></span>
                         <span className="nav-links">
-                            <a><i className="fa fa-home"></i>Dashboard</a>
-                            <a><i className="fa fa-calendar"></i>Calendar</a>
-                            <a><i className="fa fa-cog"></i>Settings</a>
+                            <NavLink to="/content" activeClassName="nav-chosen"><i className="fa fa-home"></i>Dashboard</NavLink>
+                            <NavLink to="/calendar" activeClassName="nav-chosen"><i className="fa fa-calendar"></i>Calendar</NavLink>
+                            <NavLink to="/settings" activeClassName="nav-chosen"><i className="fa fa-cog"></i>Settings</NavLink>
                         </span>
                             <button onClick={this.handleLogOut} className="logoutBtn"><i className="fa fa-sign-out"></i>Logout</button>
                     </div>
