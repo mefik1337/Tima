@@ -1,10 +1,27 @@
 import React, {Component} from 'react';
+import fire from "../../config/Firebase";
 
 export default class Timer extends Component {
+    state= {
+
+    };
     handleClick = () => {
         this.props.setDate()
     };
 
+    componentDidMount() {
+        const db = fire.firestore();
+        db.collection('timer').where('emailaddress', '==', this.props.name.email  ).get()
+            .then(snapshot =>{
+                if (snapshot.empty) {
+                    console.log('No matching documents.');
+                    return;
+                }
+                snapshot.forEach(doc => {
+                    console.log(doc.data());
+                });
+            })
+    }
     printInSeconds = (start, stop) => {
         if(start === null || stop === null ) {
             return "0:0:0"
@@ -19,6 +36,7 @@ export default class Timer extends Component {
     };
 
     render() {
+        console.log(this.props, "timer")
         return (
             <div className="timer">
                 <span className="timer-text">Your time in work today: {this.printInSeconds(this.props.startDate, this.props.currentDate)} </span>

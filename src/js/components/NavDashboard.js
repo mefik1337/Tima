@@ -22,7 +22,6 @@ export default class NavDashboard extends Component {
                     return;
                 }
                 snapshot.forEach(doc => {
-                    console.log(doc.id, '=>', doc.data());
                     this.setState({
                         name: doc.data().name,
                         surname: doc.data().surname
@@ -32,7 +31,6 @@ export default class NavDashboard extends Component {
     }
 
     render() {
-        console.log(this.state, "state");
         return (
             <nav>
                 <div className="container">

@@ -10,7 +10,8 @@ export default class Dashboard extends Component{
     state = {
         startDate: null,
         finishDate: null,
-        currentDate: null
+        currentDate: null,
+        progress: 10
     };
 
     setDate = () => {
@@ -48,7 +49,7 @@ export default class Dashboard extends Component{
         return(
             <div className="dashboard">
                     <NavDashboard name={this.props.name}/>
-                <Route path='/content' render={() => <ContentDashboard {...this.state} setDate={this.setDate}/>} />
+                <Route path='/content' render={() => <ContentDashboard {...this.state} {...this.props} setDate={this.setDate}/>} />
                 <Route path='/calendar' render={() => <CalendarDashboard/>} />
                 <Route path='/settings' render={() => <SettingsDashboard/>}/>
 

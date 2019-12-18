@@ -11,7 +11,7 @@ export default class ContentDashboard extends Component {
                 <div className="container">
                     <div className="content-dashboard-row">
                         <Timer {...this.props}/>
-                        <ProgressBar/>
+                        <ProgressBar {...this.props}/>
                     </div>
                     <div className="content-dashboard-row2">
                         <Todo/>

@@ -29,12 +29,19 @@
 .progress-empty {
   box-shadow: 0 2px 1px #222844;
   margin: 0 10px;
-  padding: 10px 300px;
+  width: 500px;
+  height: 20px;
   font-family: "Open Sans", sans-serif;
   color: #F9FAFB;
   text-align: center;
   background: #282F4F;
   border-radius: 2px;
+  .progress-full {
+    border-radius: 2px;
+    height: 100%;
+    background-color: lighten(#282F4F, 35%);
+    text-align: right;
+  }
 }
 
 //timer
