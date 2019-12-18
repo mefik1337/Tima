@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
-
-export default class SettingsDashboard extends Component{
+import fire from 'firebase/app';
+import 'firebase/firestore';
+export default class SettingsDashboard extends Component {
     render() {
-        return(
+        return (
             <div className="content-dashboard">
                 <div className="container">
                     <div className="content-dashboard-row">
-                        <span className="content-dashboard">settings</span>
+                        <div className="content-dashboard">
+                            <h1>hehehe settings</h1>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -63,6 +63,7 @@
 .startBtn{
   color: #33FF57;
   transition: .2s ease-in-out;
+  font-weight: 600;
   &:hover{
     padding: 10px 42px;
     background: darken(#282F4F, 1%);
@@ -73,6 +74,7 @@
   color: #DC143C;
   padding: 8px 43px;
   transition: .2s ease-in-out;
+  font-weight: 600;
   &:hover{
     padding: 10px 45px;
     background: darken(#282F4F, 1%);
@@ -88,10 +90,9 @@
 .todo{
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
-  height: 100%;
+  padding-top: 150px;
+  height: 50%;
   width: 100%;
-  padding-top: 40px;
 }
 .todo-tomake,
 .todo-process,
@@ -99,15 +100,22 @@
   padding: 0 40px;
 }
 .todo-text{
+  border-radius: 5px;
   text-align: center;
-  padding: 20px;
-  border: 1px solid black;
+  padding: 30px;
+  background: #F9FAFB;
+  color: #222844;
   width: 100%;
 }
 .todo-tomake-list,
 .todo-process-list,
 .todo-done-list{
-  border: 1px solid black;
+  background: #222844;
+  color: #F9FAFB;
+  border-radius: 5px;
   width: 100%;
-  padding: 20px;
+  padding: 30px;
+  p {
+    padding-bottom: 10px;
+  }
 }

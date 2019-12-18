@@ -57,7 +57,9 @@
     flex-direction: column;
 
     [name="email"],
-    [name="password"] {
+    [name="password"],
+    [name="name"],
+    [name="surname"] {
       margin-bottom: 15px;
       padding: 10px;
       border-radius: 2px;

@@ -1,28 +1,28 @@
 import React, {Component} from 'react';
 
 export default class Timer extends Component {
-    state = {
-        timer: 0,
-        toggle: true
+    handleClick = () => {
+        this.props.setDate()
     };
 
-    handleClick = (toggle) => {
-        if(toggle === 'start') {
-            this.setState({
-                toggle: false
-            })
-        } else {
-            this.setState({
-                toggle: true
-            })
+    printInSeconds = (start, stop) => {
+        if(start === null || stop === null ) {
+            return "0:0:0"
         }
+        const time = (Math.abs(start.getTime() - stop.getTime()) / 1000).toFixed(0);
+         const sec = parseInt(time % 60);
+         const min = parseInt(time / 60 ) % 60;
+         const hours = parseInt(time / 3600);
+
+         return`${hours}:${min}:${sec}`
+
     };
+
     render() {
-        const toggleBtn = this.state.toggle ? <button className="startBtn" onClick={() => this.handleClick('start')}>Start</button> : <button className="stopBtn" onClick={() => this.handleClick('stop')}>Stop</button>
-        return(
+        return (
             <div className="timer">
-                <span className="timer-text">Your time in work today: {this.state.timer}</span>
-                {toggleBtn}
+                <span className="timer-text">Your time in work today: {this.printInSeconds(this.props.startDate, this.props.currentDate)} </span>
+                <button className={this.props.startDate=== null ? "startBtn" : "stopBtn"} onClick={this.handleClick}>{this.props.startDate=== null ? "start" : "stop" }</button>
             </div>
         )
     }
