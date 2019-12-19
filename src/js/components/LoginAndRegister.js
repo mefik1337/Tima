@@ -66,6 +66,9 @@ export default class LoginAndRegister extends Component {
     };
 
     render() {
+        if(this.props.user === null){
+            return <h1>Loading</h1>
+        }
         const errorsJsx = this.state.errors && <div className="errorLogin">{this.state.errors}</div>;
         const logInputs = (
             <>

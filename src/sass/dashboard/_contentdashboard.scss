@@ -26,6 +26,7 @@
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
 }
+
 .progress-empty {
   box-shadow: 0 2px 1px #222844;
   margin: 0 10px;
@@ -36,6 +37,7 @@
   text-align: center;
   background: #282F4F;
   border-radius: 2px;
+
   .progress-full {
     border-radius: 2px;
     height: 100%;
@@ -50,12 +52,25 @@
   justify-content: center;
   align-items: center;
 }
+
 .timer-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.timer-text-main {
   font-family: "Roboto", sans-serif;
   font-weight: 200;
   font-size: 20px;
   color: #F9FAFB;
   margin-right: 20px;
+}
+
+.timer-text-additional {
+  padding-top: 10px;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  color: #F9FAFB;
 }
 
 .startBtn,
@@ -67,22 +82,26 @@
   outline: none;
   box-shadow: 0 2px 1px #222844;
 }
-.startBtn{
+
+.startBtn {
   color: #33FF57;
   transition: .2s ease-in-out;
   font-weight: 600;
-  &:hover{
+
+  &:hover {
     padding: 10px 42px;
     background: darken(#282F4F, 1%);
     transition: .2s ease-in-out;
   }
 }
-.stopBtn{
+
+.stopBtn {
   color: #DC143C;
   padding: 8px 43px;
   transition: .2s ease-in-out;
   font-weight: 600;
-  &:hover{
+
+  &:hover {
     padding: 10px 45px;
     background: darken(#282F4F, 1%);
     transition: .2s ease-in-out;
@@ -94,19 +113,23 @@
   height: 100%;
   width: 100%;
 }
-.todo{
+
+.todo {
   display: flex;
   justify-content: space-evenly;
   padding-top: 150px;
   height: 50%;
   width: 100%;
 }
+
 .todo-tomake,
 .todo-process,
-.todo-done{
+.todo-done {
   padding: 0 40px;
 }
-.todo-text{
+
+.todo-text {
+  font-family: "Open Sans", sans-serif;
   border-radius: 5px;
   text-align: center;
   padding: 30px;
@@ -114,15 +137,44 @@
   color: #222844;
   width: 100%;
 }
+
+.hard {
+  color: #DC143C;
+  text-transform: uppercase;
+}
+
+.medium {
+  color: #F7CA18;
+  text-transform: uppercase;
+}
+
+.easy {
+  color: #33FF57;
+  text-transform: uppercase;
+}
+
 .todo-tomake-list,
 .todo-process-list,
-.todo-done-list{
+.todo-done-list {
   background: #222844;
   color: #F9FAFB;
   border-radius: 5px;
   width: 100%;
   padding: 30px;
-  p {
+
+  .todo-tomake-list-text {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
     padding-bottom: 10px;
+
+    .todo-tomake-list-date-text {
+      font-size: 10px;
+      color: lighten(#282F4F, 30%);
+      margin-left: 5px;
+    }
   }
+}
+
+.email-green {
+  color: #33FF57;
 }

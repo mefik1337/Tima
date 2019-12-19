@@ -29,7 +29,7 @@ class App extends React.Component {
                 })
             } else {
                 this.setState({
-                    user: null
+                    user: false
                 })
             }
         });
@@ -41,7 +41,7 @@ class App extends React.Component {
                 <HashRouter>
                     <Switch>
                         <Route path='/'
-                               render={() => this.state.user ? <Dashboard name={this.state.user}/> : <LoginAndRegister/>}/>
+                               render={() => this.state.user ? <Dashboard name={this.state.user}/> : <LoginAndRegister user={this.state.user}/>}/>
                     </Switch>
                 </HashRouter>
             </>

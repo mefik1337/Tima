@@ -5,7 +5,7 @@ nav {
   width: 15%;
 }
 .nav-title {
-  color: lighten(#282F4F, 60%);
+  color: #F9FAFB;
   font-family: "Open Sans", sans-serif;
   font-size: 20px;
   text-transform: uppercase;
@@ -65,6 +65,7 @@ nav {
   }
 }
 .logoutBtn {
+  margin-top: 50px;
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;

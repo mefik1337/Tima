@@ -14,7 +14,7 @@ export default class ContentDashboard extends Component {
                         <ProgressBar {...this.props}/>
                     </div>
                     <div className="content-dashboard-row2">
-                        <Todo/>
+                        <Todo {...this.props}/>
                     </div>
                 </div>
             </div>
