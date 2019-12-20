@@ -1,0 +1,38 @@
+
+.loader-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.loader-first-circle,
+.loader-second-circle,
+.loader-third-circle {
+  margin-right: 15px;
+  content: "";
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #F9FAFB;
+}
+.loader-first-circle{
+  animation: first-loader 1.34s infinite;
+}
+.loader-second-circle{
+  animation: first-loader 1.35s infinite;
+}
+.loader-third-circle{
+  animation: first-loader 1.36s infinite;
+}
+@keyframes first-loader {
+  0% {
+    margin-bottom: 0px;
+  }
+  50% {
+    margin-bottom: 50px;
+  }
+
+  100% {
+    margin-bottom: 0px;
+  }
+}

@@ -75,6 +75,8 @@ export default class Todo extends Component {
         });
         fire.firestore().collection('todo').doc(oneTodo.id).update({
             status: "done"
+        }).then(()=>{
+            this.props.updateProgress()
         })
     };
 
@@ -102,7 +104,7 @@ export default class Todo extends Component {
                     </section>
                 </div>
                 <div className="todo-process">
-                    <p className="todo-text">Under progress...</p>
+                    <p className="todo-text">Under progress</p>
                     <section className="todo-process-list">
                         {this.renderToProcessList()}
                     </section>

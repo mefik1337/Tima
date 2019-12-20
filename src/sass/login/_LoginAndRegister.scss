@@ -60,6 +60,7 @@
     [name="password"],
     [name="name"],
     [name="surname"] {
+      box-shadow: 0 2px 0  #222844;
       margin-bottom: 15px;
       padding: 10px;
       border-radius: 2px;
@@ -118,13 +119,25 @@
 .registerBtn {
   cursor: pointer;
   border: none;
-  border-radius: 2px;
-  width: 75%;
+  border-radius: 15px;
+  width: 50%;
   padding: 10px;
   margin: 25px 0;
-  background: lighten(#282F4F, 5%);
+  background: rgba(0,9,189,1);
+  background: -moz-linear-gradient(left, rgba(0,9,189,1) 0%, rgba(0,72,255,1) 100%);
+  background: -webkit-linear-gradient(left, rgba(0,9,189,1) 0%, rgba(0,72,255,1) 100%);
+  background: -o-linear-gradient(left, rgba(0,9,189,1) 0%, rgba(0,72,255,1) 100%);
+  background: -ms-linear-gradient(left, rgba(0,9,189,1) 0%, rgba(0,72,255,1) 100%);
+  background: linear-gradient(to right, rgba(0,9,189,1) 0%, rgba(0,72,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0009bd', endColorstr='#0048ff', GradientType=1 );
+
   color: #F9FAFB;
   font-size: 0.75rem;
+  transition: .2s ease-in-out;
+  &:hover {
+    transition: .2s ease-in-out;
+    padding: 12px;
+  }
 }
 
 .registerBtn:active,

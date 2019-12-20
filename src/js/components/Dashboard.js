@@ -11,7 +11,6 @@ export default class Dashboard extends Component{
         startDate: null,
         finishDate: null,
         currentDate: null,
-        progress: 10
     };
 
     setDate = () => {

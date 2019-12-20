@@ -45,7 +45,7 @@ export default class LoginAndRegister extends Component {
             });
         } else {
             this.setState({
-                errors: "Podaj prawidlowe imie i nazwisko"
+                errors: "Please provide your real name and surname"
             })
         }
     };
@@ -67,7 +67,17 @@ export default class LoginAndRegister extends Component {
 
     render() {
         if(this.props.user === null){
-            return <h1>Loading</h1>
+            return (
+                <div className="loader">
+                    <div className="Container">
+                        <div className="loader-row">
+                            <div className="loader-first-circle"></div>
+                            <div className="loader-second-circle"></div>
+                            <div className="loader-third-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            )
         }
         const errorsJsx = this.state.errors && <div className="errorLogin">{this.state.errors}</div>;
         const logInputs = (
