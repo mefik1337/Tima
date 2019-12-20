@@ -4,6 +4,7 @@ import ContentDashboard from "./content/ContentDashboard";
 import {Route} from "react-router-dom";
 import SettingsDashboard from "./SettingsDashboard";
 import CalendarDashboard from "./CalendarDashboard";
+import Addtasks from "./tasks/Addtasks";
 import fire from "../config/Firebase";
 
 export default class Dashboard extends Component{
@@ -51,6 +52,7 @@ export default class Dashboard extends Component{
                 <Route path='/content' render={() => <ContentDashboard {...this.state} {...this.props} setDate={this.setDate}/>} />
                 <Route path='/calendar' render={() => <CalendarDashboard/>} />
                 <Route path='/settings' render={() => <SettingsDashboard/>}/>
+                <Route path='/addtasks' render={() => <Addtasks />}/>
 
             </div>
         )
