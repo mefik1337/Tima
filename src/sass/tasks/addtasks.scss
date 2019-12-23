@@ -1,7 +1,54 @@
-.addtasks-form {
+.form_content {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+}
+.addtasks{
+  display: flex;
   flex-direction: column;
+  width: 20%;
+  label{
+    font-size: 14px;
+    margin-top: 15px;
+    padding-bottom: 5px;
+    font-family: "Roboto", sans-serif;
+    color: #F9FAFB;
+  }
+  input[type="text"],
+  select,
+  input[type="date"]{
+    border: none;
+    box-shadow: 0 2px 1px #222844;
+    background: #282F4F;
+    border-radius: 2px;
+    color: #F9FAFB;
+    height: 30px;
+    width: 100%;
+    &::placeholder{
+      color: #F9FAFB;
+      padding-left: 5px;
+    }
+  }
+  input[type="submit"]{
+    font-family: "Roboto", sans-serif;
+    box-shadow: 1px 2px 2px #222844;
+    align-self: flex-end;
+    color: lighten(#282F4F, 30%);
+    font-weight: bold;
+    margin-top: 35px;
+    background-color: #F9FAFB;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    border: none
+  }
+}
+.addtasks_header {
+  font-family: "Roboto", sans-serif;
+  color: #F9FAFB;
+  font-size: 20px;
+  margin-bottom: 30px;
+  text-align: center;
 }
