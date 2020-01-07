@@ -12,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@pusher/chatkit": "^0.7.18",
+    "@pusher/chatkit-client": "^1.13.3",
     "firebase": "^7.6.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -19,11 +21,11 @@
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "^9.6.1",
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
     "file-loader": "^4.2.0",
