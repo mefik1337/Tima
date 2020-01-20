@@ -1,44 +1,74 @@
 import React, {Component} from 'react';
-import ChatText from "./chat/ChatText";
-import { ChatManager, TokenProvider } from '@pusher/chatkit-client'
-import {instance, api} from '../config/Chatkit'
-export default class ChatDashboard extends Component{
+import Messages from "./chat/Messages";
+import Input from "./chat/Input"
+
+function randomColor() {
+    return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+}
+
+export default class ChatDashboard extends Component {
+    state = {
+        messages: [],
+        member: {
+            username: this.props.name.email,
+            color: randomColor(),
+        }
+    };
+
     componentDidMount() {
-        const tokenProvider = new TokenProvider({
-            url: 'https://us1.pusherplatform.io/services/chatkit_token_provider/v1/378b13cf-fcb0-4293-887a-9824f327e1c9/token'
+        this.drone = new window.Scaledrone("lvd8eghsCgksGJNb", {
+            data: this.state.member,
         });
-        const chatManager = new ChatManager({
-            instanceLocator: 'v1:us1:378b13cf-fcb0-4293-887a-9824f327e1c9',
-            userId: "matthias",
-            tokenProvider: tokenProvider
+        this.drone.on('open', error => {
+            if (error) {
+                return console.error(error);
+            }
+            const member = {...this.state.member};
+            console.log(member);
+            member.id = this.drone.clientId;
+            this.setState({member});
         });
-        chatManager
-            .connect()
-            .then(currentUser => {
-                currentUser.subscribeToRoomMultipart({
-                    roomId: '6a2da358-38c4-428b-a874-034fcd66e2be',
-                    hooks: {
-                        onMessage: message => {
-                            console.log("Received message:", message)
-                        }
-                    }
-                });
-            })
-            .catch(error => {
-                console.error("error:", error);
-            });
+        const room = this.drone.subscribe("observable-tima");
+        room.on('data', (data, username) => {
+            const messages = this.state.messages;
+            messages.push({member: username, text: data});
+            this.setState({messages});
+        });
+        localStorage.getItem('messages') && this.setState({
+            messages: JSON.parse(localStorage.getItem('messages')),
+        });
     }
+
+    componentDidUpdate(nextProps, nextState) {
+        localStorage.setItem('messages', JSON.stringify(nextState.messages));
+        localStorage.setItem('member', JSON.stringify(nextState.member))
+    }
+
     render() {
-        return(
+        return (
             <div className="content-dashboard">
                 <div className="container">
                     <div className="content-dashboard-row">
-                        <span className="content-dashboard">
-                            <ChatText />
-                        </span>
+                        <div className="content-dashboard">
+                            <div className="chat">
+                                <Messages
+                                    messages={this.state.messages}
+                                    currentMember={this.state.member}
+                                />
+                                <Input
+                                    onSendMessage={this.onSendMessage}
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         )
+    }
+    onSendMessage = (message) => {
+        this.drone.publish({
+            room: "observable-tima",
+            message
+        });
     }
 }

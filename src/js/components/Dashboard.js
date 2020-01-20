@@ -50,7 +50,7 @@ export default class Dashboard extends Component{
             <div className="dashboard">
                     <NavDashboard name={this.props.name}/>
                 <Route path='/content' render={() => <ContentDashboard {...this.state} {...this.props} setDate={this.setDate}/>} />
-                <Route path='/chat' render={() => <ChatDashboard/>} />
+                <Route path='/chat' render={() => <ChatDashboard {...this.props}/>} />
                 <Route path='/settings' render={() => <SettingsDashboard/>}/>
                 <Route path='/addtasks' render={() => <Addtasks />}/>
 

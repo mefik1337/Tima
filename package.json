@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@cometchat-pro/chat": "^2.0.5",
     "@pusher/chatkit": "^0.7.18",
     "@pusher/chatkit-client": "^1.13.3",
     "firebase": "^7.6.0",
