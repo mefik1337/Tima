@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import fire from "../../config/Firebase";
 
 export default class Timer extends Component {
+    _isMounted = false;
     state = {
         dates: []
     };
@@ -11,17 +12,20 @@ export default class Timer extends Component {
     diffDate = (start, stop) => {
         return (Math.abs(start.getTime() - stop.getTime()) / 1000).toFixed(0);
     };
-
+    componentWillUnmount() {
+        this._isMounted = false;
+    }
     componentDidMount() {
+        this._isMounted = true;
         this.getDatesFromDb()
+
     }
 
     getDatesFromDb = () => {
         const db = fire.firestore();
         db.collection('timer').where('emailaddress', '==', this.props.name.email)
             .where('startdate', '>=', this.firstDateForMonth())
-            .where('startdate', '<=', this.lastDateForMonth()).get()
-            .then(snapshot => {
+            .where('startdate', '<=', this.lastDateForMonth()).onSnapshot(snapshot => {
                 if (snapshot.empty) {
                     console.log('No matching documents.');
                     return;
@@ -34,10 +38,13 @@ export default class Timer extends Component {
                     });
 
                 });
+            if (this._isMounted) {
                 this.setState({
                     dates: newDates
                 })
+            }
             })
+
     };
     firstDateForMonth = () => {
         const currentDate = new Date();

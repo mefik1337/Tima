@@ -1,43 +1,37 @@
 import React, {Component} from 'react';
-import Messages from "./chat/Messages";
-import Input from "./chat/Input"
-
-function randomColor() {
-    return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
-}
+import ChatMessages from "./chat/ChatMessages";
+import ChatInput from "./chat/ChatInput"
 
 export default class ChatDashboard extends Component {
     state = {
         messages: [],
         member: {
             username: this.props.name.email,
-            color: randomColor(),
         }
     };
-
     componentDidMount() {
-        this.drone = new window.Scaledrone("lvd8eghsCgksGJNb", {
-            data: this.state.member,
-        });
-        this.drone.on('open', error => {
-            if (error) {
-                return console.error(error);
-            }
-            const member = {...this.state.member};
-            console.log(member);
-            member.id = this.drone.clientId;
-            this.setState({member});
-        });
-        const room = this.drone.subscribe("observable-tima");
-        room.on('data', (data, username) => {
-            const messages = this.state.messages;
-            messages.push({member: username, text: data});
-            this.setState({messages});
-        });
+        this.getMessagesFromDb();
         localStorage.getItem('messages') && this.setState({
             messages: JSON.parse(localStorage.getItem('messages')),
         });
     }
+    getMessagesFromDb = () => {
+        this.drone = new window.Scaledrone("lvd8eghsCgksGJNb", {
+            data: this.state.member,
+        });
+        this.drone.on('open', error => {
+            if (error) return console.error(error);
+            const member = {...this.state.member};
+            member.id = this.drone.clientId;
+            this.setState({member});
+        });
+        const chat = this.drone.subscribe("observable-tima");
+        chat.on('data', (message, username) => {
+            const {messages} = this.state;
+            messages.push({member: username, text: message});
+            this.setState({messages});
+        });
+    };
 
     componentDidUpdate(nextProps, nextState) {
         localStorage.setItem('messages', JSON.stringify(nextState.messages));
@@ -51,12 +45,12 @@ export default class ChatDashboard extends Component {
                     <div className="content-dashboard-row">
                         <div className="content-dashboard">
                             <div className="chat">
-                                <Messages
+                                <ChatMessages
                                     messages={this.state.messages}
                                     currentMember={this.state.member}
                                 />
-                                <Input
-                                    onSendMessage={this.onSendMessage}
+                                <ChatInput
+                                    SendAMessage={this.SendAMessage}
                                 />
                             </div>
                         </div>
@@ -65,10 +59,10 @@ export default class ChatDashboard extends Component {
             </div>
         )
     }
-    onSendMessage = (message) => {
+    SendAMessage = (msg) => {
         this.drone.publish({
             room: "observable-tima",
-            message
+            message: msg
         });
     }
 }
