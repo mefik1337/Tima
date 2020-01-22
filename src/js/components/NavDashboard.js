@@ -5,7 +5,7 @@ import 'firebase/firestore';
 export default class NavDashboard extends Component {
     state = {
         name: "",
-        surname: ""
+        surname: "",
     };
 
     handleLogOut = () => {
@@ -23,13 +23,16 @@ export default class NavDashboard extends Component {
                 snapshot.forEach(doc => {
                     this.setState({
                         name: doc.data().name,
-                        surname: doc.data().surname
+                        surname: doc.data().surname,
                     })
                 });
             })
     }
 
     render() {
+        const addTasks = <NavLink to="/Addtasks" activeClassName="nav-chosen"><i className="fa fa-thumb-tack" aria-hidden="true"></i>Add tasks</NavLink>;
+        const noPermission = <NavLink to="/NoPermission" activeClassName="nav-chosen"><i className="fa fa-thumb-tack" aria-hidden="true"></i>Add tasks</NavLink>;
+        const checkTheLevel = this.props.level > 1 ? addTasks : noPermission;
         return (
             <nav>
                 <div className="container">
@@ -38,8 +41,8 @@ export default class NavDashboard extends Component {
                         <span className="nav-welcome">Hi, <span>{this.state.name} {this.state.surname}</span></span>
                         <span className="nav-links">
                             <NavLink to="/content" activeClassName="nav-chosen"><i className="fa fa-home"></i>Dashboard</NavLink>
-                            <NavLink to="/chat" activeClassName="nav-chosen" {...this.state}><i className="fa fa-commenting"></i>Chat</NavLink>
-                            <NavLink to="/settings" activeClassName="nav-chosen"><i className="fa fa-cog"></i>Settings</NavLink>
+                            <NavLink to="/chat" activeClassName="nav-chosen"><i className="fa fa-commenting"></i>Chat</NavLink>
+                            {checkTheLevel}
                             <button onClick={this.handleLogOut} className="logoutBtn"><i className="fa fa-sign-out"></i>Logout</button>
                         </span>
 

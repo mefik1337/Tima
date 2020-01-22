@@ -37,7 +37,8 @@ export default class LoginAndRegister extends Component {
             const userRef = db.collection("users").add({
                 emailaddress: this.state.email,
                 name: this.state.name,
-                surname: this.state.surname
+                surname: this.state.surname,
+                accountLevel: 1
             });
             this.setState({
                 name: "",

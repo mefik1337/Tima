@@ -3,14 +3,21 @@ import ChatMessages from "./chat/ChatMessages";
 import ChatInput from "./chat/ChatInput"
 
 export default class ChatDashboard extends Component {
+    _isMounted = false;
     state = {
         messages: [],
         member: {
             username: this.props.name.email,
         }
     };
+    componentWillUnmount() {
+        this._isMounted = false;
+    }
     componentDidMount() {
-        this.getMessagesFromDb();
+        this._isMounted = true;
+        if (this._isMounted) {
+            this.getMessagesFromDb();
+        }
         localStorage.getItem('messages') && this.setState({
             messages: JSON.parse(localStorage.getItem('messages')),
         });
@@ -29,7 +36,7 @@ export default class ChatDashboard extends Component {
         chat.on('data', (message, username) => {
             const {messages} = this.state;
             messages.push({member: username, text: message});
-            this.setState({messages});
+                this.setState({messages});
         });
     };
 

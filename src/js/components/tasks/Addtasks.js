@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import fire from "../../config/Firebase";
+import NoPermission from "../NoPermission/NoPermission";
 
 export default class Addtasks extends Component {
     state = {
@@ -10,7 +11,7 @@ export default class Addtasks extends Component {
         name: '',
         progress: 1,
         status: 'tomake',
-        errors: ''
+        errors: '',
     };
 
     handleChange = e => {
@@ -47,7 +48,6 @@ export default class Addtasks extends Component {
             })
         }
     };
-
     render() {
         const errorsJsx = this.state.errors && <div className="errorLogin">{this.state.errors}</div>;
         return (

@@ -1,18 +1,16 @@
 import React, {Component} from 'react';
-import fire from 'firebase/app';
-import 'firebase/firestore';
-export default class SettingsDashboard extends Component {
+export default class NoPermission extends Component {
     render() {
         return (
             <div className="content-dashboard">
                 <div className="container">
                     <div className="content-dashboard-row">
                         <div className="content-dashboard">
-                            <h1>hehehe settings</h1>
+                            <h1 className="permission">You don't have permission to see that page.</h1>
                         </div>
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 }
