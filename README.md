@@ -29,3 +29,5 @@ Also there is a todo list and progress bar. They are connected to each other. Th
 In todo there is a sort. And it will show you only data with <= currentdate. If is > than current date. It will be avaiable to see when the current date === date what we select.
 <img src="tima-preview-photo/7.png" />
 <img src="tima-preview-photo/8.png" />
+  <h3>Live preview: https://tima-auth.firebaseapp.com/#/</h3>
+  
