@@ -19,6 +19,9 @@
   justify-content: space-around;
   margin-top: 150px;
   align-items: center;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 //progress
@@ -29,12 +32,17 @@
   color: #F9FAFB;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
+  width: 100vh;
+  p { text-align: center}
+  @media only screen and (max-width: 768px) {
+    width: 50vh;
+  }
 }
 
 .progress-empty {
   box-shadow: 0 2px 1px #222844;
   margin: 0 10px;
-  width: 500px;
+  width: 100vh;
   height: 20px;
   font-family: "Open Sans", sans-serif;
   color: #F9FAFB;
@@ -59,6 +67,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
 }
 
 .timer-text {
@@ -72,6 +83,10 @@
   font-size: 20px;
   color: #F9FAFB;
   margin-right: 20px;
+  @media only screen and (max-width: 768px) {
+    margin-top: 20px;
+    text-align: center;
+  }
 }
 
 .timer-text-additional {
@@ -79,6 +94,10 @@
   font-size: 14px;
   font-family: "Roboto", sans-serif;
   color: #F9FAFB;
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 20px;
+    text-align: center;
+  }
 }
 
 .startBtn,
@@ -89,6 +108,9 @@
   text-transform: uppercase;
   outline: none;
   box-shadow: 0 2px 1px #222844;
+  @media only screen and (max-width: 768px) {
+    padding: 20px 40px;
+  }
 }
 
 .startBtn {
@@ -100,6 +122,9 @@
     padding: 10px 42px;
     background: darken(#282F4F, 1%);
     transition: .2s ease-in-out;
+    @media only screen and (max-width: 768px) {
+      padding: 22px 42px;
+    }
   }
 }
 
@@ -110,9 +135,12 @@
   font-weight: 600;
 
   &:hover {
-    padding: 10px 45px;
+    padding: 10px 42px;
     background: darken(#282F4F, 1%);
     transition: .2s ease-in-out;
+    @media only screen and (max-width: 768px) {
+      padding: 22px 42px;
+    }
   }
 }
 
@@ -128,12 +156,23 @@
   padding-top: 150px;
   height: 50%;
   width: 100%;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+  }
+
 }
 
 .todo-tomake,
 .todo-process,
 .todo-done {
   padding: 0 40px;
+  @media only screen and (max-width: 768px) {
+    padding: 0;
+    margin: 0 0 20px -60px;
+    align-self: center;
+    width: 80%;
+  }
 }
 
   .todo-text {

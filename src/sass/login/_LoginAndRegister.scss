@@ -23,6 +23,9 @@
     background: #282F4F;
     border-radius: 10px;
     box-shadow: 1px 2px 2px #222844;
+    @media only screen and (max-width: 768px) {
+      width: 100%;
+    }
   }
 }
 

@@ -6,6 +6,9 @@
   background: #222844;
   border-radius: 10px;
   width: 50vw;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 }
 .chat-list {
   padding: 20px 0;
