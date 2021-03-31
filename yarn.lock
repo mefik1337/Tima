@@ -735,6 +735,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@cometchat-pro/chat@^2.0.5":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@cometchat-pro/chat/-/chat-2.3.0.tgz#d54b2db8ace69d375b2aac5c5644e39339f8d8e2"
+  integrity sha512-jXvfsUkv69wnnOk53HeoBO1JECPCzxPrK9Hs9cJfrjhEJscWjKy4PyYb0VmD4o+olxZk81enLbCB5dseYtkosw==
+
 "@firebase/analytics-types@0.2.5":
   version "0.2.5"
   resolved "https://registry.yarnpkg.com/@firebase/analytics-types/-/analytics-types-0.2.5.tgz#18f4400482a445504b69d6b64c7d98f11fd3ea5e"
@@ -6849,9 +6854,9 @@ xtend@^4.0.0, xtend@~4.0.1:
   integrity sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==
 
 y18n@^3.2.0, y18n@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.1.tgz#6d15fba884c08679c0d77e88e7759e811e07fa41"
-  integrity sha1-bRX7qITAhnnA136I53WegR4H+kE=
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.2.tgz#85c901bd6470ce71fc4bb723ad209b70f7f28696"
+  integrity sha512-uGZHXkHnhF0XeeAPgnKfPv1bgKAYyVvmNL1xlKsPYZPaIHxGti2hHqvOCQv71XMsLxu1QjergkqogUnms5D3YQ==
 
 "y18n@^3.2.1 || ^4.0.0", y18n@^4.0.0:
   version "4.0.0"
